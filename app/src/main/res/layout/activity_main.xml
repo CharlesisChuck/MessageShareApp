@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="10dp">
+    android:padding="10dp"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btnShowToast"
@@ -23,15 +23,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/enter_your_message"
+        android:inputType=""
         app:layout_constraintBottom_toTopOf="@+id/btnSensMsgToNextActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnShowToast"
-        android:autofillHints=""
-        android:inputType="" />
+        app:layout_constraintTop_toBottomOf="@+id/btnShowToast" />
 
     <Button
         android:id="@+id/btnSensMsgToNextActivity"
@@ -41,6 +41,17 @@
         android:text="@string/send_data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ShareToOtherApps"
+        android:layout_width="174dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="424dp"
+        android:text="@string/share_to_other_apps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

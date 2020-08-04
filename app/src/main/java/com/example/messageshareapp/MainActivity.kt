@@ -25,7 +25,21 @@ class MainActivity : AppCompatActivity() {
 
             //This switches over to the other activity
             val intent = Intent(this, SecondActivity::class.java)
+
+            intent.putExtra("user_message_btn2", message)
+
             startActivity(intent)
+        }
+
+        ShareToOtherApps.setOnClickListener {
+            val message: String = etUserMessage.text.toString()
+
+            val intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT, message)
+            intent.type = "text/plain"
+
+            startActivity(Intent.createChooser(intent, "Share to : "))
         }
     }
 
