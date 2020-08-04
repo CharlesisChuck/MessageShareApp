@@ -1,5 +1,6 @@
 package com.example.messageshareapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -14,10 +15,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnShowToast.setOnClickListener {
-            //code when clicked
             Log.i("MainActivity", "Button was clicked !")
-
             Toast.makeText(this, "Button was clicked", Toast.LENGTH_SHORT).show()
+        }
+
+        btnSensMsgToNextActivity.setOnClickListener {
+            val message: String = etUserMessage.text.toString()
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+
+            //This switches over to the other activity
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
         }
     }
 
